@@ -1,229 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+ <div class="demo">
+  <div class="demo__colored-blocks">
+    <div class="demo__colored-blocks-rotater">
+      <div class="demo__colored-block"></div>
+      <div class="demo__colored-block"></div>
+      <div class="demo__colored-block"></div>
+    </div>
+    <div class="demo__colored-blocks-inner"></div>
+    <div class="demo__text">Ready</div>
+  </div>
+  <div class="demo__inner">
+    <svg class="demo__numbers" viewBox="0 0 100 100">
+      <defs>
+        <path class="demo__num-path-1" d="M40,28 55,22 55,78"/>
+        <path class="demo__num-join-1-2" d="M55,78 55,83 a17,17 0 1,0 34,0 a20,10 0 0,0 -20,-10"/>
+        <path class="demo__num-path-2" d="M69,73 l-35,0 l30,-30 a16,16 0 0,0 -22.6,-22.6 l-7,7"/>
+        <path class="demo__num-join-2-3" d="M28,69 Q25,44 34.4,27.4"/>
+        <path class="demo__num-path-3" d="M30,20 60,20 40,50 a18,15 0 1,1 -12,19"/>
+      </defs>
+      <path class="demo__numbers-path" 
+            d="M-10,20 60,20 40,50 a18,15 0 1,1 -12,19 
+               Q25,44 34.4,27.4
+               l7,-7 a16,16 0 0,1 22.6,22.6 l-30,30 l35,0 L69,73 
+               a20,10 0 0,1 20,10 a17,17 0 0,1 -34,0 L55,83 
+               l0,-61 L40,28" />
+    </svg>
+  </div>
+</div>
 
-$font: 'Lato', sans-serif;
-$big: 'Montserrat', sans-serif;
-
-$red: #EF2F3C;
-$white: #F6F4F3;
-$blue: #276FBF;
-$dark: #183059;
-$yellow: #F0A202;
-
-$star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  
-html {
-  display: grid;
-  min-height: 100%;
-}
-
-body {
-  display: grid;
-  background: $dark;
-}
-
-.container {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-  width: 650px;
-  height: 480px;
-}
-
-h1 {
-  font-family: $font;
-  text-align: center;
-  margin-top: 2em;
-  font-size: 1em;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: $white;
-}
-
-#timer {
-  color: $white;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: $font;
-  font-size: .7em;
-  letter-spacing: 5px;
-  margin-top: 25%;
-}
-
-.days, .hours, .minutes, .seconds {
-  display: inline-block;
-  padding: 20px;
-  width: 100px;
-  border-radius: 5px;
-}
-
-.days {
-  background: $red;
-}
-
-.hours {
-  background: $white;
-  color: $dark;
-}
-
-.minutes {
-  background: $blue;
-}
-
-.seconds {
-  background: $yellow;
-  .numbers {
-   
-  }
-}
-
-.numbers {
-  font-family: $big;
-  color: $dark;
-  font-size: 4em;
-}
-
-.white {
-  position: absolute;
-  background: $white;
-  height: 85px;
-  width: 75px;
-  left: 30%;
-  top: 2%;
-  .triangle {
-    border-bottom: 14px solid $white;
-  }
-  .string {
-    background: $white;
-    border: 1px solid $white;
-  }
-}
-
-.red {
-  position: absolute;
-  background: $red;
-  left: 18%;
-  top: 9%;
-  height: 65px;
-  width: 70px;
-  .triangle {
-    border-bottom: 14px solid $red;
-  }
-  .string {
-    background: $red;
-    border: 1px solid $red;
-  }
-}
-
-.blue {
-  position: absolute;
-  background: $blue;
-  height: 80px;
-  width: 80px;
-  left: 60%;
-  top: 5%;
-  .triangle {
-    border-bottom: 14px solid $blue;
-  }
-  .string {
-    background: $blue;
-    border: 1px solid $blue;
-  }
-}
-
-.balloon {
-  border: 1px solid #000;
-  border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
-  z-index: 2;
-}
-
-.eye {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  top: 40%;
-  left: 22%;
-  background: #000;
-  border-radius: 50%;
-  &:after {
-    content: '';
-    left: 35px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #000;
-    position: absolute;
-  }
-}
-
-.mouth {
-  position:absolute;
-  top: 45%;
-  left: 43%;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-}
-
-.happy {
-  border: 2px solid;
-  border-color: transparent #000 #000 transparent;
-  transform: rotate(45deg);
-}
-
-.triangle {
-  position: absolute;
-  left: 40%;
-  bottom: -10%;
-  width: 0;
-	height: 0;
-	border-left: 7px solid transparent;
-	border-right: 7px solid transparent;
-}
-
-.string {
-  position: absolute;
-  height: 70px;
-  width: 1px;
-  left: 48%;
-  top: 100%;
-  z-index: -1;
-}
-
-.star {
-  width: 20px;
-  height: 20px;
-  background: $white;
-  -webkit-clip-path: $star;
-  clip-path: $star;
-}
-
-.star-red {
-  width: 30px;
-  height: 30px;
-  margin-left: 51px;
-  margin-top: -5px;
-  background: $red;
-  -webkit-clip-path: $star;
-  clip-path: $star;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  text-transform: uppercase;
-  padding: 10px;
-  font-family: $font;
-  font-size: 0.7em;
-  p {
-    letter-spacing: 3px;
-    color: $red;
-  }
-  a {
-    color: $white;
-    text-decoration: none;
-    &:hover {
-      color: $blue;
-    }
-  }
-}
